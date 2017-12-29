@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>hover.html</title>
+
+<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+<meta http-equiv="description" content="this is my page">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="../lesson2/jquery-3.2.1.js"></script>
+<script type="text/javascript">
+	$(function() {
+		/*$("a").hover(function(){
+			$("div").css("display","block");
+		},function(){
+			$("div").css("display","none");
+		});*/
+
+		$("a").mousemove(function(e) {
+			$("#testDiv").show().css({'top' : (e.pageY + 5),'left' : (e.pageX + 15),'position' : 'absolute','z-index' : 1});
+		}).mouseleave(function() {
+			$("#testDiv").hide();
+		});
+	});
+</script>
+</head>
+
+<body>
+	<a href="http://www.taobao.com">淘宝</a>
+	<div id="testDiv" style="display:none;">
+		<img src="1.jpg" width="200px" height="200px">
+	</div>
+</body>
+</html>

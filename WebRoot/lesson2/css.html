@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>css.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="jquery-3.2.1.js"></script>
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+    <style type="text/css">
+    	.myDiy{
+    		color:red;
+    	
+    	}
+    </style>
+	<script type="text/javascript">
+		$(function(){
+		//jquery方法的特点：只有一个参数的就是取值 ，两个参数的就是赋值
+		
+			//获取属性
+			alert($("input").attr("type"));
+			//修改属性值
+			$("input").attr("type","password");
+			
+			//使用addClass()添加内部样式表到dom元素中
+			$("#myDiv").addClass("myDiy");
+			
+			//使用css()添加行内样式表
+			$("#myDiv").css("color","blue");
+			
+			//使用val()获取值
+			alert($("input").val());
+			
+			//使用val("")设置值
+			alert($("input").val("123"));
+			
+			alert($("input").val());
+			
+			
+			//使用html()获取内容,会把所有内容都弹出来包括标签，不会解析其中的html标签
+			alert($("#myDiv").html());
+			
+			//使用html("")设置值
+			alert($("#myDiv").html("<font color='yellow'>士大夫士大夫身份</font>"));
+			
+			//使用text()获取内容
+			alert($("#myDiv").text());
+		})
+	</script>
+  </head>
+  
+  <body>
+    <input type="text" value="789"/>
+    <div id="myDiv"><font color='blue'>这是测试样式表</font></div>
+  </body>
+</html>

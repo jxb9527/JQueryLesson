@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>form.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="jquery-3.2.1.js"></script>
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<script type="text/javascript">
+		$(function(){
+		//获取表单中的参数
+			var paramStr=$("form").serialize();
+			alert(paramStr);
+		})
+	</script>
+  </head>
+  
+  <body>
+  	<form action="">
+  		用户名:<input type="text" name="uname"/ value="123">
+  		密码:<input type="password" name="password"/>
+  		确认密码:<input type="password" name="repassword"/>
+  		打篮球<input type="checkbox" name="check" value="0"/>
+  		游泳:<input type="checkbox" name="check" value="1"																																																																																						/>
+  	</form>
+  </body>
+</html>

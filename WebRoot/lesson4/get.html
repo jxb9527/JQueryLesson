@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>get.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="jquery-3.2.1.js"></script>
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<script type="text/javascript">
+		$(function() {
+		//"http://restapi.amap.com/v3/weather/weatherInfo?key=a537e84b33afe79a0685eaf4c8b20b26&city="+addCode
+		$("input[type='button']").click(function() {
+			var addCode = $("#addCode").val();
+			var url ="http://restapi.amap.com/v3/weather/weatherInfo";
+			$.post(url,"key=a537e84b33afe79a0685eaf4c8b20b26&city="+addCode,function(msg){
+				var tq=msg.lives[0].weather;
+					$("div").remove();
+					if(tq=="晴"){
+						$(document.body).append("<div><img src='fine.png'></div>");
+					}else{
+						$(document.body).append("<div><img src='cloudy.png'></div>");
+					}
+			});
+			
+			/*$.get(url,"key=a537e84b33afe79a0685eaf4c8b20b26&city="+addCode,function(msg){
+				var tq=msg.lives[0].weather;
+					$("div").remove();
+					if(tq=="晴"){
+						$(document.body).append("<div><img src='fine.png'></div>");
+					}else{
+						$(document.body).append("<div><img src='cloudy.png'></div>");
+					}
+			});*/
+			
+		});
+	});
+	</script>
+  </head>
+  
+  <body>
+    <input id="addCode" type="text" value="">
+	<input type="button" value="查询">
+  </body>
+</html>

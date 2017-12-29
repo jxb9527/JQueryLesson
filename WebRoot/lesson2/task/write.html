@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>write.html</title>
+
+<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+<meta http-equiv="description" content="this is my page">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="../jquery-3.2.1.js"></script>
+<!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<script type="text/javascript">
+	$(function(){
+		$("#singles").click(function(){
+			$("option[value='2']").removeAttr("selected").attr("selected","selected");
+		})
+		$("#multis").click(function(){
+			$("option[value='2'],option[value='4']",).removeAttr("selected").attr("selected","selected");
+		})
+	})
+	
+</script>
+</head>
+
+<body>
+	<input type="button" id="singles" value="使单选下拉框的'选择3号'被选中"/>
+	</br>
+	<input type="button" id="multis" value="使多选框的'多选2'和'多选4'被选中"/>
+	</br>
+	</br>
+
+	<select id="single">
+		<option value="0">选择一号</option>
+		<option value="1">选择二号</option>
+		<option value="2">选择三号</option>
+	</select>
+
+	<select id="multi" multiple="multiple">
+		<option value="1">选择一号</option>
+		<option value="2">选择二号</option>
+		<option value="3">选择三号</option>
+		<option value="4">选择四号</option>
+		<option value="5">选择五号</option>
+	</select>
+</body>
+</html>

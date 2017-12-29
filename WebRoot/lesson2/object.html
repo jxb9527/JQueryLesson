@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>object.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="jquery-3.2.1.js"></script>
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+	<script type="text/javascript">
+		$(function(){
+			//统称为dom对象       标签对象(Button  Anchor 等) js对象Window document对象 javaScript语言中
+			
+			//获取body对象 body标签可以直接点则其他标签不能直接点出来
+// 			var body=document.body;
+// 			alert(body);
+		
+		
+			/*
+				jquery对象 : 其实就是包含了一个dom对象的数组
+				jquery选择器 : 找到满足选择器条件的dom元素相关的jquery对象，传的参数是字符串，就是选择器参数
+			*/    
+			//根据id获取div的jquery对象
+			var jqueryObj=$("#mydiv")[0];
+			
+			var domDivObj = document.getElementById("mydiv");
+			
+			alert(jqueryObj==domDivObj);
+			
+			
+			//获取jquery对象	(jquery对象只能调用jquery中的方法和属性，不能调用js中的方法和属性)
+			var jqueryInputObj=$("#userName")
+			alert(jqueryInputObj.val());
+			
+			//jquery转换为dom对象	
+			var domInputObj=jqueryInputObj[0];
+			alert(domInputObj.value)
+			
+			
+			//获取dom对象
+			var domObj =document.getElementById("userName");
+			alert(domObj.value);
+			
+			//dom对象转换为jquery对象 （jquery中的方法只能是jquery对象才能使用，js对象不能使用）
+			var jqueryObject=$(domObj);
+			alert(jqueryObject.val());
+			
+		})
+		
+	</script>
+
+  </head>
+  
+  <body>
+  	<input type="text" id="userName" value="231"/> 
+  	<div id="mydiv">
+  		我的div
+  	</div>
+  	<input type="text" value="564"/>
+  </body>
+</html>

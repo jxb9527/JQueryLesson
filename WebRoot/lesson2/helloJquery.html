@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>helloJquery.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<script type="text/javascript" src="jquery-3.2.1.js"></script>
+	
+	<script type="text/javascript">
+	//$是jquery的入口，其实就是一个函数，这个函数可以传入不同类型的参数，比如：匿名函数，字符串
+	/*
+		如果传入的是函数就等于window.onload 也就是等初始化完dom元素后，调用这个函数
+	*/
+		//alert($);
+		$(function(){
+			alert(document);
+		})
+		
+		//这是jquery1.几的版本的玩法 相等于window.onload
+		$(document).ready(function(){
+			alert("Hello World");
+		})
+	</script>
+  </head>
+  	<input type="text"/>
+  <body>
+    
+  </body>
+</html>

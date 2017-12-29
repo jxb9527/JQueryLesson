@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>each.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="jquery-3.2.1.js"></script>
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<script type="text/javascript">
+		$(function(){
+			/* var arr=["zs","ls","ww"];
+			//index表示循环的下标 ，value表示每次循环的值
+			$.each(arr,function(index,value){
+				alert(index+"--------"+value);
+			}); */
+			
+			
+			/* var arrJosn=[{id:1,name:'zs'},{id:2,name:'ls'},{id:3,name:'ww'}];
+			$.each(arrJosn,function(index,value){
+				alert(index+"--------"+value.name);
+			}); */
+			
+			$("input[type='checkbox']").each(function(index,value){
+				//value是dom对象
+				//value.checked="checked";
+				$(value).attr("checked","checked");
+			})
+		});
+	</script>
+  </head>
+  
+  <body>
+    <input type="checkbox"/>打篮球
+    <input type="checkbox"/>游戏
+  </body>
+</html>

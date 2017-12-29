@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>easyui.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="jquery.easyui.min.js"></script>
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<script type="text/javascript">
+		
+	</script>
+  </head>
+  
+  <body>
+   <div class="easyui-dialog" style="width:400px;height:200px"
+    data-options="title:'My Dialog',collapsible:true,iconCls:'icon-ok',onOpen:function(){}">
+        dialog content.
+	</div><input class="easyui-combobox" name="language"   
+        data-options="    
+            url:'combobox_data.json',    
+            valueField:'id',    
+            textField:'text',    
+            panelHeight:'auto',    
+            onSelect:function(record){    
+                alert(record.text)    
+            }" /> 
+  </body>
+</html>

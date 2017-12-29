@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>epAndGet.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="jquery-3.2.1.js"></script>
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<script type="text/javascript">
+	//如果根据标签获取元素，例:现在有多个input标签
+	/*
+		eq是获取，选择器选中的多个jquery对象中，索引指定的那个
+		get 返回的是dom对象
+	*/
+	$(function(){
+		var jqueryObjArray=$("input"); //返回的是多个
+		
+		alert(jqueryObjArray.val()); //默认取到第一个文本框的值
+		
+		//使用eq(第几个位置，从0开始) 返回的还是jquery对象
+		alert(jqueryObjArray.eq(0).val()); //取到第一个文本框的值
+		
+		alert(jqueryObjArray.eq(1).val());	//取到第二个文本框的值
+		
+		//使用get(第几个位置，从0开始) 返回的还是js对象
+		alert(jqueryObjArray.get(0).value);	//取到第一个文本框的值
+		
+		alert(jqueryObjArray.get(1).value);	//取到第二个文本框的值
+		
+		//也可以使用下列这种方法获取值
+		alert(jqueryObjArray[0].value); //与get(0)效果相同
+	})
+	</script>
+			
+  </head>
+  
+  <body>
+    <input type="text" id="userName" value="231"/> <br/>
+  	<input type="text" id="userid" value="789"/> 
+  </body>
+</html>

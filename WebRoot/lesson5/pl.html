@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>pl.html</title>
+
+<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+<meta http-equiv="description" content="this is my page">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="jquery-3.2.1.js"></script>
+<!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+<script type="text/javascript">
+	$(function(){
+		//被拓展出来的方法叫插件 是静态方法的拓展
+		$.extend({
+			add:function(p1,p2){
+				return p1+p2;
+			}
+		});
+		
+		//静态方法的拓展
+		alert($.add(10,20));
+		
+		//实例方法拓展
+		$.fn.extend({
+			value:function(){
+			//这里的this是jquery对象
+				return this.val();
+			}
+		})
+		
+		alert($("input[type='text']").value());
+	});
+	</script>
+</head>
+
+<body>
+	<input type="text" name="uname" value="123"/>
+</body>
+</html>

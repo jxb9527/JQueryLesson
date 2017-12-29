@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>event.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="../lesson2/jquery-3.2.1.js"></script>
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<script type="text/javascript">
+	//事件：源于一个事件驱动模型，包括windows的一些操作都是一个事件，在我们dom元素和页面上，对dom元素操作。都会有事件，事件遵循一个触发的机制叫做冒泡。
+	//冒泡机制：就是从子元素一值冒到最顶层的父元素，他的onclilk事件都会被触发。
+	//事件委派
+		$(function(){
+			$("#a").click(function(){
+				alert("aaa");
+			});
+			
+			$("#a").click(function(){
+				alert("aaaaaaaaaaaaaaaaaa");
+			});
+			
+			
+			$("#b").click(function(){
+				$("#a").click();
+			});
+			
+		});
+	</script>
+  </head>
+  
+  <body>
+  	<input id="a" type="button" value="点击"/>
+  	<input id="b" type="button" value="触发"/>
+  </body>
+</html>

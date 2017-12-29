@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>css.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+    <!--
+    	   选择器 选择某些特定的dom元素
+    -->
+    <style type="text/css" >
+        /*
+           	标签选择器
+        */
+        div{
+           color: red;
+        }
+        #mySpan{
+        	color: green;
+        }
+        .j{
+          color:blue;
+        }
+        p[v="ajax"]{
+        	color:yellow;
+        }
+        p:nth-child(even){
+        	color:purple;
+        }
+        a:hover{
+          color:red;
+        }
+        a{
+        	text-decoration: none;
+        }
+        a:link{
+          text-decoration: underline;
+        }
+        
+    </style>
+    <script type="text/javascript">
+      window.onload=function(){
+      	var myName=document.getElementById("myName");
+      	myName.value="饺子";
+        alert(myName);
+        var mySex=document.getElementsByName("mySex")[0];
+        alert(mySex);
+        var myAge=document.getElementsByTagName("input")[2];
+        alert(myAge)
+        //删除子元素(removeChild) 添加子元素(appendChild createElement("input")) 
+        document.getElementsByTagName("form")[0].removeChild(myName);
+       
+        //万能的追加元素
+        var myInput=document.createElement("input");
+        myInput.value="hello";
+        document.getElementById("myDiv").appendChild(myInput);
+        //支持div和span 覆盖当前div中所有的内容
+        //document.getElementById("myDiv").innerHTML="<font color=red>hello</font>";
+        
+      }
+    </script>
+    
+  </head>
+  
+  <body>
+     <div>hello</div>
+     <div>hello1</div>
+     
+     <span id="mySpan">css</span>
+     
+      <p class="j">jquery</p>
+     
+      <p v="ajax">ajax</p>
+     
+      <p>springmvc</p>
+     
+     
+      <a href="http://www.baidu.com">百度</a>
+      <a href="http://www.qq.com">腾讯</a>
+      
+      <form >
+       用户名 :<input type="text" id="myName"/>
+    性别 :<input type="text" name="mySex"/>  
+     年龄:<input type="text" />  
+      </form>
+      
+      <div id="myDiv" style="border: 1px solid black;width:100px;height:100px">
+         <font color=green>hello</font>
+      </div>
+      
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>parityColor.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="jquery-3.2.1.js"></script>
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<script type="text/javascript">
+	$(function(){
+		//偶数行变色
+		$("tr:odd").css("background","blue");
+		//奇数行变色
+		//$("tr:even").not("[type='header']").css("background","red"); //实现表头不变色
+		$("tr:even:not([type='header'])").css("background","red"); //这种也可以实现表头不变色
+	})
+	</script>
+  </head>
+  
+  <body>
+	<table>
+		<tr type="header">
+			<th>用户姓名</th>
+			<th>用户性别</th>
+			<th>用户年龄</th>
+		</tr>
+		<tr>
+			<td>zs</td>
+			<td>男</td>
+			<td>11</td>
+		</tr>
+		<tr>
+			<td>ls</td>
+			<td>女</td>
+			<td>12</td>
+		</tr>
+		<tr>
+			<td>ww</td>
+			<td>骚</td>
+			<td>34</td>
+		</tr>
+		<tr>
+			<td>uu</td>
+			<td>妖</td>
+			<td>34</td>
+		</tr>
+	</table>
+</body>
+</html>
